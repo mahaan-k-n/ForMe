@@ -1,26 +1,247 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --ivory: #F8F4EE;
+    --champagne: #E8DCCB;
+    --burgundy: #5C2331;
+    --burgundy-deep: #3D1520;
+    --espresso: #2B221F;
+    --dusty-rose: #D8A5A0;
+    --gold: #C9A96E;
+    --gold-light: #E8D5A3;
+    --cream: #FAF7F2;
+    --warm-white: #FDFAF6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--ivory);
+    color: var(--espresso);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--dusty-rose);
+    color: var(--espresso);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--ivory);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--champagne);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--dusty-rose);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Typography system — using Next.js font CSS vars */
+  .font-display {
+    font-family: var(--font-cormorant), 'Georgia', serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-editorial {
+    font-family: var(--font-playfair), 'Georgia', serif;
+    font-style: italic;
+  }
+
+  .font-body {
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+  }
+
+  /* Eyebrow text */
+  .eyebrow {
+    font-family: var(--font-dm-sans), sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+  }
+
+  /* Gold rule */
+  .gold-rule {
+    width: 3rem;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    flex-shrink: 0;
+  }
+
+  /* Container */
+  .container-luxury {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 clamp(1.5rem, 5vw, 5rem);
+  }
+
+  /* Luxury section spacing */
+  .section-luxury {
+    padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 6vw, 5rem);
+  }
+
+  .section-luxury-sm {
+    padding: clamp(3rem, 8vw, 7rem) clamp(1.5rem, 6vw, 5rem);
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.25rem;
+    background-color: var(--espresso);
+    color: var(--ivory);
+    font-family: var(--font-dm-sans), sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--burgundy);
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .btn-primary:hover::before {
+    transform: translateX(0);
+  }
+
+  .btn-primary > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-primary span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-primary svg {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.25rem;
+    background-color: transparent;
+    color: var(--espresso);
+    font-family: var(--font-dm-sans), sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid currentColor;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-decoration: none;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--espresso);
+    color: var(--ivory);
+    border-color: var(--espresso);
+  }
+
+  /* Card */
+  .card-editorial {
+    background: var(--warm-white);
+    border: 1px solid var(--champagne);
+    transition: all 0.4s ease;
+  }
+
+  .card-editorial:hover {
+    border-color: var(--dusty-rose);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(43, 34, 31, 0.08);
+  }
+
+  /* Luxury input */
+  .input-luxury {
+    width: 100%;
+    padding: 1rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--champagne);
+    font-family: var(--font-dm-sans), sans-serif;
+    font-size: 0.9375rem;
+    color: var(--espresso);
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .input-luxury::placeholder {
+    color: rgba(43, 34, 31, 0.35);
+    font-weight: 300;
+  }
+
+  .input-luxury:focus {
+    border-bottom-color: var(--espresso);
+  }
+
+  /* Section divider */
+  .divider-luxury {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--champagne), transparent);
+  }
+}
+
+@layer utilities {
+  .text-ivory { color: var(--ivory); }
+  .text-champagne { color: var(--champagne); }
+  .text-burgundy { color: var(--burgundy); }
+  .text-espresso { color: var(--espresso); }
+  .text-dusty-rose { color: var(--dusty-rose); }
+  .text-gold { color: var(--gold); }
+
+  .bg-ivory { background-color: var(--ivory); }
+  .bg-champagne { background-color: var(--champagne); }
+  .bg-burgundy { background-color: var(--burgundy); }
+  .bg-espresso { background-color: var(--espresso); }
+  .bg-dusty-rose { background-color: var(--dusty-rose); }
+  .bg-cream { background-color: var(--cream); }
+  .bg-warm-white { background-color: var(--warm-white); }
+
+  .border-champagne { border-color: var(--champagne); }
+  .border-burgundy { border-color: var(--burgundy); }
+  .border-dusty-rose { border-color: var(--dusty-rose); }
+  .border-gold { border-color: var(--gold); }
+
+  /* Hide scrollbar for marquee */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
