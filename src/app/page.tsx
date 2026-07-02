@@ -14,6 +14,8 @@ import RealWomenSection from "@/components/sections/RealWomenSection";
 import EngineeredSection from "@/components/sections/EngineeredSection";
 import FitFinderSection from "@/components/sections/FitFinderSection";
 import FoundingCircleSection from "@/components/sections/FoundingCircleSection";
+import FeaturedCollectionSection from "@/components/sections/FeaturedCollectionSection";
+import LifestyleGallerySection from "@/components/sections/LifestyleGallerySection";
 
 function PageLoader({ onDone }: { onDone: () => void }) {
   useEffect(() => {
@@ -77,7 +79,9 @@ export default function HomePage() {
         <SearchSection />
         <FabricTruthSection />
         <HeroBraSection />
+        <FeaturedCollectionSection />
         <ConfidenceSection />
+        <LifestyleGallerySection />
         <RealWomenSection />
         <EngineeredSection />
         <FitFinderSection />
