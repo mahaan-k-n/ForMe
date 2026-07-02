@@ -17,18 +17,14 @@ import FoundingCircleSection from "@/components/sections/FoundingCircleSection";
 import FeaturedCollectionSection from "@/components/sections/FeaturedCollectionSection";
 import LifestyleGallerySection from "@/components/sections/LifestyleGallerySection";
 
-function PageLoader({ onDone }: { onDone: () => void }) {
-  useEffect(() => {
-    const t = setTimeout(onDone, 1800);
-    return () => clearTimeout(t);
-  }, [onDone]);
-
+function PageLoader() {
   return (
     <motion.div
-      className="fixed inset-0 z-[100] flex items-center justify-center"
+      className="pointer-events-none fixed inset-0 z-[100] flex items-center justify-center"
       style={{ backgroundColor: "#F8F4EE" }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+      aria-hidden="true"
     >
       <div className="text-center">
         <motion.p
@@ -62,10 +58,15 @@ function PageLoader({ onDone }: { onDone: () => void }) {
 export default function HomePage() {
   const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    const timer = window.setTimeout(() => setLoaded(true), 1800);
+    return () => window.clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <AnimatePresence>
-        {!loaded && <PageLoader onDone={() => setLoaded(true)} />}
+        {!loaded && <PageLoader />}
       </AnimatePresence>
 
       <motion.main

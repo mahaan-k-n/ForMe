@@ -148,7 +148,7 @@ export default function FabricTruthSection() {
               Most brands tell you their fabric is &ldquo;soft&rdquo; and
               &ldquo;breathable.&rdquo; We tell you the mill, the certification,
               and the process — because what touches your skin matters more than
-              what's printed on a tag.
+              what&apos;s printed on a tag.
             </motion.p>
 
             {["If We Can't Explain It,\nWe Won't Use It.", "Transparency Is The New Luxury."].map((line, i) => (

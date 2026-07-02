@@ -29,7 +29,7 @@ export default function HeroSection() {
       >
         <Image
           src="/hero.jpg"
-          alt="A woman wearing Forme lingerie — confident, comfortable, elegant"
+          alt="A confident Indian D+ woman in refined Forme lingerie"
           fill
           className="object-cover object-center"
           priority
@@ -79,7 +79,8 @@ export default function HeroSection() {
             className="font-body text-base md:text-lg text-[#2B221F]/70 mb-4 leading-relaxed max-w-sm"
             style={{ fontFamily: "var(--font-dm-sans)" }}
           >
-            Beautifully engineered for women who deserve more.
+            Beautifully engineered for the fuller-bust woman India kept asking
+            to compromise.
           </motion.p>
 
           {/* Brand pillars */}
@@ -89,7 +90,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="flex items-center gap-3 mb-12"
           >
-            {["Beautiful.", "Breathable.", "Built To Last."].map((word, i) => (
+            {["D+ Fit.", "Indian Heat.", "No Compromise."].map((word, i) => (
               <span key={word} className="flex items-center gap-3">
                 {i > 0 && <span className="w-1 h-1 rounded-full bg-[#D8A5A0]" />}
                 <span

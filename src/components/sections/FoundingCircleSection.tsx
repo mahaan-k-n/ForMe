@@ -103,9 +103,9 @@ export default function FoundingCircleSection() {
               className="space-y-8"
             >
               {[
-                { headline: "Not Customers.", sub: "Co-Creators." },
-                { headline: "Before The Product.", sub: "Before The Launch." },
-                { headline: "Before The Industry Notices.", sub: "" },
+                { headline: "Not Customers.", sub: "Fit Collaborators." },
+                { headline: "Before The Drop.", sub: "Before The Public Launch." },
+                { headline: "Before The Industry Learns Your Name.", sub: "" },
               ].map((item, i) => (
                 <div key={i} className="border-l-2 border-[#E8DCCB] pl-6">
                   <p
@@ -125,13 +125,28 @@ export default function FoundingCircleSection() {
                 </div>
               ))}
 
-              <div className="p-8 bg-[#2B221F] mt-10">
+              <div className="p-8 bg-[#F8F4EE]/70 border border-[#E8DCCB] mt-10">
+                <p className="eyebrow text-[#5C2331] mb-4">Founder Note</p>
+                <p
+                  className="font-display text-2xl text-[#2B221F] leading-snug mb-5"
+                  style={{ fontFamily: "var(--font-cormorant)" }}
+                >
+                  We built this because the industry kept designing around us.
+                </p>
+                <p className="font-body text-sm text-[#2B221F]/50 leading-relaxed">
+                  The first Forme pieces will be shaped by women who know the
+                  difference between a bra that technically closes and a bra
+                  that lets you forget about it.
+                </p>
+              </div>
+
+              <div className="p-8 bg-[#2B221F] mt-6">
                 <p className="eyebrow text-[#D8A5A0] mb-4">What You Get</p>
                 {[
-                  "Early access before public launch",
-                  "Founding price — locked forever",
-                  "Direct input on the final design",
-                  "Your name in the founding story",
+                  "Early sizing access before the public launch",
+                  "A private fitting feedback loop with the design team",
+                  "First access to the production drop",
+                  "A permanent place in the founding fit panel",
                 ].map((benefit) => (
                   <div key={benefit} className="flex items-center gap-4 py-3 border-b border-[#F8F4EE]/10 last:border-0">
                     <div className="w-1 h-1 rounded-full bg-[#D8A5A0] flex-shrink-0" />
@@ -173,7 +188,7 @@ export default function FoundingCircleSection() {
                         className="font-display text-xl text-[#5C2331]"
                         style={{ fontFamily: "var(--font-cormorant)" }}
                       >
-                        October 2025
+                        Private Launch
                       </p>
                     </div>
                   </div>
@@ -297,15 +312,15 @@ export default function FoundingCircleSection() {
                       className="btn-primary w-full justify-center"
                       id="founding-circle-submit"
                     >
-                      <span>Join The Circle</span>
+                      <span>Join The Fitting List</span>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                       </svg>
                     </button>
 
                     <p className="font-body text-xs text-[#2B221F]/30 text-center leading-relaxed">
-                      No spam. No launches you didn&apos;t ask for.
-                      Only what you need to know, when it matters.
+                      No spam. No noisy launches. Just fitting access,
+                      prototype notes, and the first production drop.
                     </p>
                   </form>
                 </motion.div>
@@ -330,11 +345,11 @@ export default function FoundingCircleSection() {
                     className="font-display text-4xl text-[#2B221F] mb-4"
                     style={{ fontFamily: "var(--font-cormorant)" }}
                   >
-                    You&apos;re In The Circle.
+                    You&apos;re On The Fitting List.
                   </h3>
                   <p className="font-body text-base text-[#2B221F]/50 leading-relaxed max-w-sm mb-3">
-                    Welcome, co-creator. We&apos;ll be in touch when it matters —
-                    which means before anyone else knows this exists.
+                    Welcome, fit collaborator. We&apos;ll be in touch with early
+                    sizing access, prototype notes, and the private launch path.
                   </p>
                   <p
                     className="font-editorial text-sm text-[#5C2331] italic"

@@ -2,28 +2,33 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 const galleryImages = [
   {
     src: "/confidence.jpg",
+    alt: "Forme lingerie styled under oversized tailoring",
     aspect: "aspect-[3/4]",
     caption: "Worn under oversized tailoring.",
     yOffset: 0
   },
   {
     src: "/hero.jpg",
+    alt: "Relaxed morning styling with comfortable Forme support",
     aspect: "aspect-[4/5]",
     caption: "Sunday mornings, uncompromised.",
     yOffset: 40
   },
   {
     src: "/community.jpg",
+    alt: "Women wearing outfits supported by invisible Forme fit",
     aspect: "aspect-[1/1]",
     caption: "Support that stays invisible.",
     yOffset: -20
   },
   {
     src: "/product-bra.jpg",
+    alt: "Close product view of the everyday Forme plunge bra",
     aspect: "aspect-[3/4]",
     caption: "The everyday plunge.",
     yOffset: 20
@@ -80,11 +85,12 @@ export default function LifestyleGallerySection() {
               className={`relative group flex flex-col ${i % 2 !== 0 ? 'md:mt-16' : ''}`}
             >
               <div className={`relative w-full ${img.aspect} overflow-hidden bg-champagne`}>
-                <img
+                <Image
                   src={img.src}
-                  alt="Lifestyle"
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  loading="lazy"
+                  alt={img.alt}
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
                 
                 {/* Shop the look overlay */}

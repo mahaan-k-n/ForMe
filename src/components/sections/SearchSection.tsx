@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 const moments = [
   "You try on twelve bras across three stores.",
@@ -10,6 +11,21 @@ const moments = [
   "You plan your outfit around what you can hide.",
   "You order online. Three sizes. Return two.",
   "You settle. Again.",
+];
+
+const searchImages = [
+  {
+    src: "/problem.jpg",
+    alt: "Close crop of a poorly fitting bra before Forme",
+    caption: "The old compromise",
+    className: "aspect-[4/5] md:mt-12",
+  },
+  {
+    src: "/product-bra.jpg",
+    alt: "Forme prototype bra with fuller-bust construction",
+    caption: "The corrected pattern",
+    className: "aspect-[3/4]",
+  },
 ];
 
 export default function SearchSection() {
@@ -99,6 +115,36 @@ export default function SearchSection() {
 
           {/* Right: moments list */}
           <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="grid grid-cols-2 gap-4 md:gap-6 mb-10"
+            >
+              {searchImages.map((image, i) => (
+                <div key={image.src} className={image.className}>
+                  <div className="relative h-full min-h-72 overflow-hidden bg-[#E8DCCB]">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 50vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2B221F]/45 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3">
+                      <span className="font-body text-[10px] uppercase tracking-[0.18em] text-[#F8F4EE]/80">
+                        {image.caption}
+                      </span>
+                      <span className="font-body text-xs tabular-nums text-[#D8A5A0]">
+                        0{i + 1}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
             <div className="space-y-0">
               {moments.map((moment, i) => (
                 <motion.div

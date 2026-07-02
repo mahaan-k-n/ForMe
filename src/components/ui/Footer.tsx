@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const footerLinks = {
   "The Brand": [
@@ -25,10 +25,7 @@ const footerLinks = {
 export default function Footer() {
   const handleClick = (href: string) => {
     if (href.startsWith("#")) {
-      const el = document.querySelector(href);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
+      scrollToSection(href);
     }
   };
 
@@ -91,7 +88,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8">
           <p className="font-body text-xs text-[#F8F4EE]/30 tracking-wide">
-            © 2025 Forme. All rights reserved. Engineered in India.
+            © 2026 Forme. All rights reserved. Engineered in India.
           </p>
           <p
             className="font-editorial text-xs text-[#F8F4EE]/20 italic"

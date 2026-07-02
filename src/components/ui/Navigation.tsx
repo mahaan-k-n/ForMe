@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const navLinks = [
   { label: "The Story", href: "#problem" },
@@ -22,14 +23,19 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!window.location.hash) return;
+
+    const timer = window.setTimeout(() => {
+      scrollToSection(window.location.hash, false);
+    }, 100);
+
+    return () => window.clearTimeout(timer);
+  }, []);
+
   const handleNavClick = (href: string) => {
     setMenuOpen(false);
-    const el = document.querySelector(href);
-    if (el) {
-      const offset = 80;
-      const top = el.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: "smooth" });
-    }
+    scrollToSection(href);
   };
 
   return (

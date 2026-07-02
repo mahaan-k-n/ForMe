@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 const principles = [
   {
@@ -39,6 +40,24 @@ const principles = [
     title: "Not Marketing. Engineering.",
     body: "We don't describe our bras as 'supportive' — we publish the underwire gauge, wing height, and strap width. Because you deserve numbers, not adjectives.",
     tag: "Honesty",
+  },
+];
+
+const proofImages = [
+  {
+    src: "/fabric.jpg",
+    alt: "Close-up of breathable fabric selected for Forme lingerie",
+    label: "Material Lab",
+  },
+  {
+    src: "/product-bra.jpg",
+    alt: "Forme bra prototype showing cup depth and wide straps",
+    label: "Prototype Fit",
+  },
+  {
+    src: "/community.jpg",
+    alt: "Women from the Forme fit panel testing real-world comfort",
+    label: "Fit Panel",
   },
 ];
 
@@ -99,6 +118,43 @@ export default function EngineeredSection() {
             </motion.div>
           </div>
         </div>
+
+        {/* Visual proof strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="grid md:grid-cols-3 gap-px bg-[#F8F4EE]/10 mb-20"
+        >
+          {proofImages.map((image, i) => (
+            <div key={image.src} className="relative h-72 overflow-hidden bg-[#1A0F0C] group">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover opacity-65 transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2B221F]/90 via-[#2B221F]/15 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4">
+                <div>
+                  <p className="eyebrow text-[#D8A5A0] mb-2">
+                    {image.label}
+                  </p>
+                  <p
+                    className="font-display text-2xl text-[#F8F4EE]"
+                    style={{ fontFamily: "var(--font-cormorant)" }}
+                  >
+                    {i === 0 ? "Chosen by data." : i === 1 ? "Shaped on D+ bodies." : "Stress-tested in life."}
+                  </p>
+                </div>
+                <span className="font-body text-xs text-[#F8F4EE]/35 tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+            </div>
+          ))}
+        </motion.div>
 
         {/* Principles grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#F8F4EE]/5">

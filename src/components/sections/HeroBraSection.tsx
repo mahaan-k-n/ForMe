@@ -14,10 +14,10 @@ const features = [
   },
   {
     id: "02",
-    title: "Mesh Ventilation Zones",
+    title: "Heat-Aware Ventilation",
     description:
-      "Perforated TENCEL panels beneath the underwire and along the side seam allow continuous airflow without compromising structure.",
-    detail: "12% cooler at body temperature",
+      "Perforated TENCEL panels beneath the underwire and along the side seam move heat and moisture through humid Indian days without weakening the frame.",
+    detail: "Built for heat, not showroom lighting",
   },
   {
     id: "03",
@@ -35,10 +35,10 @@ const features = [
   },
   {
     id: "05",
-    title: "Convertible Design",
+    title: "Wardrobe-Aware Shape",
     description:
-      "Three strap configurations from a single bra. Halter, racerback, traditional. The bra adapts to you — not the reverse.",
-    detail: "One bra. Every outfit.",
+      "A fuller cup profile designed for T-shirts, kurtas, blouses, wrap dresses, and tailored shirts. Smooth where it should disappear. Beautiful where it can be seen.",
+    detail: "Designed around how Indian women dress",
   },
 ];
 
