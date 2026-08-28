@@ -28,10 +28,10 @@ export default function HeroSection() {
         style={{ y: imageY }}
       >
         <Image
-          src="/hero.jpg"
-          alt="A confident Indian D+ woman in refined Forme lingerie"
+          src="/hero-burgundy-bodysuit.png"
+          alt="A confident fuller-bust woman in burgundy Forme lingerie"
           fill
-          className="object-cover object-center"
+          className="object-cover object-[68%_center]"
           priority
           fetchPriority="high"
           sizes="100vw"

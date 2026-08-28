@@ -50,13 +50,13 @@ const proofImages = [
     label: "Material Lab",
   },
   {
-    src: "/product-bra.jpg",
-    alt: "Forme bra prototype showing cup depth and wide straps",
+    src: "/landing 2.png",
+    alt: "Forme bra prototype showing cup depth, centre support, and wide straps",
     label: "Prototype Fit",
   },
   {
-    src: "/community.jpg",
-    alt: "Women from the Forme fit panel testing real-world comfort",
+    src: "/lance-reis-F4R5ljpUHsQ-unsplash.jpg",
+    alt: "Fuller-bust fit panel inspiration for real-world comfort testing",
     label: "Fit Panel",
   },
 ];

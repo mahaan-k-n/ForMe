@@ -98,10 +98,10 @@ export default function RealWomenSection() {
           >
             <div className="relative h-64 overflow-hidden">
               <Image
-                src="/community.jpg"
-                alt="Three diverse women — real confidence, real community"
+                src="/vivek-NPdoEYKv2hA-unsplash.jpg"
+                alt="A confident woman representing the Forme fit community"
                 fill
-                className="object-cover"
+                className="object-cover object-[50%_24%]"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#F8F4EE]/40 to-transparent" />

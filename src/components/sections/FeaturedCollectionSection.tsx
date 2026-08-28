@@ -10,7 +10,8 @@ const products = [
     name: "The Signature Balconette",
     description: "Lift and separation for D-H cups, with a higher centre panel and a band that stays anchored through long Indian days.",
     proof: ["28mm comfort straps", "Higher centre panel", "Heat-aware lining"],
-    image: "/product-bra.jpg",
+    image: "/landing 4.png",
+    objectPosition: "50% 34%",
     colors: ["#2B221F", "#F8F4EE", "#5C2331"],
   },
   {
@@ -18,7 +19,8 @@ const products = [
     name: "The Everyday Plunge",
     description: "A lower neckline that still respects gravity. Built for silk shirts, kurtas, wrap dresses, and the outfits you stopped trusting.",
     proof: ["No top-cup spill", "Stabilised side wing", "Breathable cup depth"],
-    image: "/confidence.jpg",
+    image: "/landing 3.png",
+    objectPosition: "50% 34%",
     colors: ["#2B221F", "#E8DCCB"],
   },
   {
@@ -26,7 +28,8 @@ const products = [
     name: "The Seamless Lounge",
     description: "Wire-free ease for fuller busts without the usual collapse. Soft enough for home, structured enough for the day outside.",
     proof: ["Wide underband", "Moisture-moving modal", "Shape without padding"],
-    image: "/hero.jpg",
+    image: "/hero-burgundy-bodysuit.png",
+    objectPosition: "68% center",
     colors: ["#2B221F", "#F8F4EE", "#D8A5A0", "#5C2331"],
   },
 ];
@@ -94,6 +97,7 @@ export default function FeaturedCollectionSection() {
                   alt={product.name}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  style={{ objectPosition: product.objectPosition }}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2B221F]/45 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

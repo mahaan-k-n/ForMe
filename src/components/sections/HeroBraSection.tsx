@@ -93,10 +93,10 @@ export default function HeroBraSection() {
           >
             <motion.div className="absolute inset-0" style={{ y: imageY }}>
               <Image
-                src="/product-bra.jpg"
-                alt="The Forme Bra — TENCEL lace, full coverage, wide straps"
+                src="/landing 2.png"
+                alt="The Forme burgundy lace bra with structured cups and wide comfort straps"
                 fill
-                className="object-cover object-center"
+                className="object-cover object-[50%_34%]"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </motion.div>

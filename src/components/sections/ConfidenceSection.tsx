@@ -23,10 +23,10 @@ export default function ConfidenceSection() {
       {/* Background image */}
       <motion.div className="absolute inset-0 z-0" style={{ scale: imageScale }}>
         <Image
-          src="/confidence.jpg"
-          alt="Confident woman in Forme — beautifully supported, effortlessly powerful"
+          src="/Generated image 1.png"
+          alt="Confident fuller-bust woman in burgundy tailoring and Forme styling"
           fill
-          className="object-cover object-center opacity-40"
+          className="object-cover object-[68%_center] opacity-40"
           sizes="100vw"
         />
       </motion.div>

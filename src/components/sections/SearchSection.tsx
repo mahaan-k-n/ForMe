@@ -21,8 +21,8 @@ const searchImages = [
     className: "aspect-[4/5] md:mt-12",
   },
   {
-    src: "/product-bra.jpg",
-    alt: "Forme prototype bra with fuller-bust construction",
+    src: "/landing 2.png",
+    alt: "Forme burgundy lace bra with fuller-bust construction",
     caption: "The corrected pattern",
     className: "aspect-[3/4]",
   },

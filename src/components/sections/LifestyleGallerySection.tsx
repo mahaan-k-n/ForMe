@@ -6,31 +6,35 @@ import Image from "next/image";
 
 const galleryImages = [
   {
-    src: "/confidence.jpg",
-    alt: "Forme lingerie styled under oversized tailoring",
+    src: "/Generated image 1.png",
+    alt: "Forme styled under burgundy tailoring in a warm editorial room",
     aspect: "aspect-[3/4]",
-    caption: "Worn under oversized tailoring.",
+    caption: "Worn under evening tailoring.",
+    objectPosition: "68% center",
     yOffset: 0
   },
   {
-    src: "/hero.jpg",
-    alt: "Relaxed morning styling with comfortable Forme support",
+    src: "/landing 3.png",
+    alt: "Burgundy lace Forme set styled for a quiet morning at home",
     aspect: "aspect-[4/5]",
-    caption: "Sunday mornings, uncompromised.",
+    caption: "Sunday mornings, fully supported.",
+    objectPosition: "50% 34%",
     yOffset: 40
   },
   {
-    src: "/community.jpg",
-    alt: "Women wearing outfits supported by invisible Forme fit",
+    src: "/lance-reis-F4R5ljpUHsQ-unsplash.jpg",
+    alt: "Fuller-bust woman in warm outerwear and visible lingerie styling",
     aspect: "aspect-[1/1]",
-    caption: "Support that stays invisible.",
+    caption: "The outfit starts underneath.",
+    objectPosition: "50% 28%",
     yOffset: -20
   },
   {
-    src: "/product-bra.jpg",
-    alt: "Close product view of the everyday Forme plunge bra",
+    src: "/kateryna-hliznitsova-CkfIcBXDzCw-unsplash.jpg",
+    alt: "Black-and-white portrait of a woman in confident evening styling",
     aspect: "aspect-[3/4]",
-    caption: "The everyday plunge.",
+    caption: "Confidence without adjustment.",
+    objectPosition: "50% 28%",
     yOffset: 20
   }
 ];
@@ -90,6 +94,7 @@ export default function LifestyleGallerySection() {
                   alt={img.alt}
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  style={{ objectPosition: img.objectPosition }}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
                 
